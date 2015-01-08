@@ -1,0 +1,66 @@
+﻿@model astronomy5.Models.Misijas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Misijas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nosaukums)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nosaukums)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datums)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datums)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apraksts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apraksts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rezultats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rezultats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tips)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tips)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MisijaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

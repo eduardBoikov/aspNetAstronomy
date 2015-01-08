@@ -1,0 +1,15 @@
+﻿@model  IEnumerable<astronomy5.Models.Lidaparati>
+
+@{
+    ViewBag.Title = "Aircrafts";
+}
+
+<h2>Lidaparati</h2>
+<p>@Html.ActionLink("Go Back", "ChooseData")</p>
+<ul>
+   
+    @foreach (var apar in Model)
+    {
+        <li>@apar.Nosaukums</li>
+    }
+</ul>

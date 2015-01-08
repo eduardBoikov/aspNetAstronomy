@@ -1,0 +1,43 @@
+﻿@model IEnumerable<astronomy5.Models.Lidaparati>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Aiziet uz misijam", "Index", "MisijasManage")
+</p>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nosaukums)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apraksts)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nosaukums)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apraksts)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LidID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LidID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LidID })
+        </td>
+    </tr>
+}
+
+</table>

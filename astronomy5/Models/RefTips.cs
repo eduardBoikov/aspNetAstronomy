@@ -11,6 +11,7 @@ namespace astronomy5.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class RefTips
     {
@@ -18,7 +19,7 @@ namespace astronomy5.Models
         {
             this.Misijas = new HashSet<Misijas>();
         }
-    
+        [Key]
         public int RefTipsID { get; set; }
         public string Veids { get; set; }
     

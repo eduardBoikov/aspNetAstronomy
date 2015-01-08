@@ -43,6 +43,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -51,6 +55,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -160,12 +172,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LidaparatiManageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MisijasManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501081601448_InitialCreate.cs" />
+    <Compile Include="Migrations\201501081601448_InitialCreate.Designer.cs">
+      <DependentUpon>201501081601448_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Astro.Context.cs">
       <AutoGen>True</AutoGen>
@@ -182,6 +202,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Astro.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AstroEntities.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lidaparati.cs">
       <DependentUpon>Astro.tt</DependentUpon>
@@ -279,8 +300,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Missions.cshtml" />
+    <Content Include="Views\MisijasManage\Create.cshtml" />
+    <Content Include="Views\MisijasManage\Delete.cshtml" />
+    <Content Include="Views\MisijasManage\Details.cshtml" />
+    <Content Include="Views\MisijasManage\Edit.cshtml" />
+    <Content Include="Views\MisijasManage\Index.cshtml" />
+    <Content Include="Views\LidaparatiManage\Create.cshtml" />
+    <Content Include="Views\LidaparatiManage\Delete.cshtml" />
+    <Content Include="Views\LidaparatiManage\Details.cshtml" />
+    <Content Include="Views\LidaparatiManage\Edit.cshtml" />
+    <Content Include="Views\LidaparatiManage\Index.cshtml" />
+    <Content Include="Views\Home\ChooseData.cshtml" />
+    <Content Include="Views\Home\Planets.cshtml" />
+    <Content Include="Views\Home\Aircrafts.cshtml" />
+    <Content Include="Views\Home\Satellites.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201501081601448_InitialCreate.resx">
+      <DependentUpon>201501081601448_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

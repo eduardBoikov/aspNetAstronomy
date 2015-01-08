@@ -11,9 +11,11 @@ namespace astronomy5.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Lidaparati
     {
+        [Key]
         public int LidID { get; set; }
         public string Nosaukums { get; set; }
         public string Apraksts { get; set; }

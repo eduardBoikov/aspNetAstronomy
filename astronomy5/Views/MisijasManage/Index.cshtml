@@ -1,0 +1,67 @@
+﻿@model IEnumerable<astronomy5.Models.Misijas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Aiziet uz lidaparatiem", "Index", "LidaparatiManage")
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nosaukums)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datums)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organizacija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apraksts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rezultats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tips)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nosaukums)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datums)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organizacija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apraksts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rezultats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tips)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MisijaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MisijaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MisijaID })
+        </td>
+    </tr>
+}
+
+</table>

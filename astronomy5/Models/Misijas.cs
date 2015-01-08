@@ -11,9 +11,11 @@ namespace astronomy5.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Misijas
     {
+        [Key]
         public int MisijaID { get; set; }
         public string Nosaukums { get; set; }
         public Nullable<System.DateTime> Datums { get; set; }

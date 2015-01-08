@@ -1,0 +1,16 @@
+﻿@model IEnumerable<astronomy5.Models.Planetas>
+
+@{
+    ViewBag.Title = "Planets";
+}
+
+<h2>Planetas</h2>
+<p>@Html.ActionLink("Go Back", "ChooseData")</p>
+<ul>
+   
+    @foreach (var planet in Model)
+    {
+        <li>@planet.Nosaukums</li>
+    }
+
+</ul>

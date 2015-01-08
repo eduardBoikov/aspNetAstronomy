@@ -1,0 +1,15 @@
+﻿@model IEnumerable<astronomy5.Models.Pavadoni>
+
+@{
+    ViewBag.Title = "Satellites";
+}
+
+<h2>Pavadoni</h2>
+<p>@Html.ActionLink("Go Back", "ChooseData")</p>
+<ul>
+    
+    @foreach (var pavad in Model)
+    {
+        <li>@pavad.Nosaukums</li>
+    }
+</ul>
