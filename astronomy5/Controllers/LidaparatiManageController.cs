@@ -46,16 +46,17 @@ namespace astronomy5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="LidID,Nosaukums,Apraksts")] Lidaparati lidaparati)
+        public bool Create([Bind(Include="LidID,Nosaukums,Apraksts")] Lidaparati lidaparati)
         {
             if (ModelState.IsValid)
             {
                 db.Aparati.Add(lidaparati);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return true;
             }
-
-            return View(lidaparati);
+            return false;
+            //return View(lidaparati);
         }
 
         // GET: /LidaparatiManage/Edit/5
@@ -78,15 +79,17 @@ namespace astronomy5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="LidID,Nosaukums,Apraksts")] Lidaparati lidaparati)
+        public bool Edit([Bind(Include="LidID,Nosaukums,Apraksts")] Lidaparati lidaparati)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(lidaparati).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return true;
             }
-            return View(lidaparati);
+            //return View(lidaparati);
+            return false;
         }
 
         // GET: /LidaparatiManage/Delete/5
@@ -107,12 +110,13 @@ namespace astronomy5.Controllers
         // POST: /LidaparatiManage/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public bool DeleteConfirmed(int id)
         {
             Lidaparati lidaparati = db.Aparati.Find(id);
             db.Aparati.Remove(lidaparati);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return true;
         }
 
         protected override void Dispose(bool disposing)

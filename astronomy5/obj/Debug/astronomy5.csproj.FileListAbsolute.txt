@@ -79,3 +79,4 @@ D:\aspNetAstronomy\aspNetAstronomy\astronomy5\bin\System.Web.Http.xml
 D:\aspNetAstronomy\aspNetAstronomy\astronomy5\bin\System.Web.Http.WebHost.xml
 D:\aspNetAstronomy\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.Migrations.InitialCreate.resources
 D:\aspNetAstronomy\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.csproj.GenerateResource.Cache
+D:\aspNetAstronomy\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.csprojResolveAssemblyReference.cache

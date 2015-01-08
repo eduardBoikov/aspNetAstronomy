@@ -46,16 +46,18 @@ namespace astronomy5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="MisijaID,Nosaukums,Datums,Organizacija,Apraksts,Rezultats,Tips")] Misijas misijas)
+        public bool Create([Bind(Include="MisijaID,Nosaukums,Datums,Organizacija,Apraksts,Rezultats,Tips")] Misijas misijas)
         {
             if (ModelState.IsValid)
             {
                 db.Misijas.Add(misijas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return true;
             }
 
-            return View(misijas);
+           // return View(misijas);
+            return false;
         }
 
         // GET: /MisijasManage/Edit/5
@@ -78,15 +80,15 @@ namespace astronomy5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="MisijaID,Nosaukums,Datums,Organizacija,Apraksts,Rezultats,Tips")] Misijas misijas)
+        public bool Edit([Bind(Include="MisijaID,Nosaukums,Datums,Organizacija,Apraksts,Rezultats,Tips")] Misijas misijas)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(misijas).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return true;
             }
-            return View(misijas);
+            return false;
         }
 
         // GET: /MisijasManage/Delete/5
@@ -107,12 +109,13 @@ namespace astronomy5.Controllers
         // POST: /MisijasManage/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public bool DeleteConfirmed(int id)
         {
             Misijas misijas = db.Misijas.Find(id);
             db.Misijas.Remove(misijas);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return true;
         }
 
         protected override void Dispose(bool disposing)
