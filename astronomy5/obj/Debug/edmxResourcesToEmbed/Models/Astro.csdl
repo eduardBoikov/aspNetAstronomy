@@ -5,7 +5,7 @@
       <PropertyRef Name="LidID" />
     </Key>
     <Property Name="LidID" Type="Int32" Nullable="false" />
-    <Property Name="Nosaukums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Nosaukums" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Misijas">
@@ -40,8 +40,8 @@
     </Key>
     <Property Name="PlanetaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nosaukums" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Izmers" Type="Double" />
-    <Property Name="Masa" Type="Double" />
+    <Property Name="Izmers" Type="String" />
+    <Property Name="Masa" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
     <Property Name="Gravitacija" Type="Double" />
     <Property Name="MinT" Type="Double" />
     <Property Name="MaxT" Type="Double" />

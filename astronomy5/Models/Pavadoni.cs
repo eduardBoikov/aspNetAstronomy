@@ -11,11 +11,9 @@ namespace astronomy5.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Pavadoni
     {
-        [Key]
         public int PavadoniID { get; set; }
         public string Nosaukums { get; set; }
         public Nullable<double> Izmers { get; set; }

@@ -12,12 +12,12 @@ namespace astronomy5.Controllers
 {
     public class LidaparatiManageController : Controller
     {
-        private AstronomyEntities db = new AstronomyEntities();
+        private AstroEntities db = new AstroEntities();
 
         // GET: /LidaparatiManage/
         public ActionResult Index()
         {
-            return View(db.Aparati.ToList());
+            return View(db.Lidaparati.ToList());
         }
 
         // GET: /LidaparatiManage/Details/5
@@ -27,7 +27,7 @@ namespace astronomy5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lidaparati lidaparati = db.Aparati.Find(id);
+            Lidaparati lidaparati = db.Lidaparati.Find(id);
             if (lidaparati == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace astronomy5.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Aparati.Add(lidaparati);
+                db.Lidaparati.Add(lidaparati);
                 db.SaveChanges();
                 //return RedirectToAction("Index");
                 return true;
@@ -66,7 +66,7 @@ namespace astronomy5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lidaparati lidaparati = db.Aparati.Find(id);
+            Lidaparati lidaparati = db.Lidaparati.Find(id);
             if (lidaparati == null)
             {
                 return HttpNotFound();
@@ -99,7 +99,7 @@ namespace astronomy5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lidaparati lidaparati = db.Aparati.Find(id);
+            Lidaparati lidaparati = db.Lidaparati.Find(id);
             if (lidaparati == null)
             {
                 return HttpNotFound();
@@ -112,8 +112,8 @@ namespace astronomy5.Controllers
         [ValidateAntiForgeryToken]
         public bool DeleteConfirmed(int id)
         {
-            Lidaparati lidaparati = db.Aparati.Find(id);
-            db.Aparati.Remove(lidaparati);
+            Lidaparati lidaparati = db.Lidaparati.Find(id);
+            db.Lidaparati.Remove(lidaparati);
             db.SaveChanges();
             //return RedirectToAction("Index");
             return true;

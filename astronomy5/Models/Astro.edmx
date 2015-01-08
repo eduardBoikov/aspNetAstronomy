@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AstroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AstroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Lidaparati">
           <Key>
             <PropertyRef Name="LidID" />
           </Key>
-          <Property Name="LidID" Type="int" Nullable="false" />
-          <Property Name="Nosaukums" Type="nchar" MaxLength="10" />
+          <Property Name="LidID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nosaukums" Type="nchar" MaxLength="50" />
           <Property Name="Apraksts" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Misijas">
@@ -44,8 +44,8 @@
           </Key>
           <Property Name="PlanetaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nosaukums" Type="nvarchar" MaxLength="20" />
-          <Property Name="Izmers" Type="float" />
-          <Property Name="Masa" Type="float" />
+          <Property Name="Izmers" Type="nvarchar" MaxLength="20" />
+          <Property Name="Masa" Type="nvarchar" MaxLength="20" />
           <Property Name="Gravitacija" Type="float" />
           <Property Name="MinT" Type="float" />
           <Property Name="MaxT" Type="float" />
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="RefTipsID" />
           </Key>
-          <Property Name="RefTipsID" Type="int" Nullable="false" />
+          <Property Name="RefTipsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Veids" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK_Misijas_RefTips">
@@ -81,8 +81,7 @@
             <End Role="Misijas" EntitySet="Misijas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AstroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -91,7 +90,7 @@
             <PropertyRef Name="LidID" />
           </Key>
           <Property Name="LidID" Type="Int32" Nullable="false" />
-          <Property Name="Nosaukums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Nosaukums" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Misijas">
@@ -126,8 +125,8 @@
           </Key>
           <Property Name="PlanetaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nosaukums" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Izmers" Type="Double" />
-          <Property Name="Masa" Type="Double" />
+          <Property Name="Izmers" Type="String" />
+          <Property Name="Masa" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="Gravitacija" Type="Double" />
           <Property Name="MinT" Type="Double" />
           <Property Name="MaxT" Type="Double" />

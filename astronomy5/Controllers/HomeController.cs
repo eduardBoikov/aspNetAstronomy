@@ -9,7 +9,7 @@ namespace astronomy5.Controllers
     public class HomeController : Controller
     {
 
-        AstronomyEntities astroDB = new AstronomyEntities();
+        AstroEntities astroDB = new AstroEntities();
         public ActionResult Index()
         {
             return View();
@@ -49,7 +49,7 @@ namespace astronomy5.Controllers
 
         public ActionResult Aircrafts()
         {
-            var aparati = astroDB.Aparati.ToList();
+            var aparati = astroDB.Lidaparati.ToList();
 
             return View(aparati);
         }

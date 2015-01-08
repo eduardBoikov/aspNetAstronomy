@@ -12,7 +12,7 @@ namespace astronomy5.Controllers
 {
     public class MisijasManageController : Controller
     {
-        private AstronomyEntities db = new AstronomyEntities();
+        private AstroEntities db = new AstroEntities();
 
         // GET: /MisijasManage/
         public ActionResult Index()

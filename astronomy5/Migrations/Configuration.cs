@@ -11,6 +11,7 @@ namespace astronomy5.Migrations
         {
             AutomaticMigrationsEnabled = true;
             ContextKey = "astronomy5.Models.AstronomyEntities";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(astronomy5.Models.AstronomyEntities context)

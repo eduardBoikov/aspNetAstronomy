@@ -11,15 +11,13 @@ namespace astronomy5.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Planetas
     {
-        [Key]
         public int PlanetaID { get; set; }
         public string Nosaukums { get; set; }
-        public Nullable<double> Izmers { get; set; }
-        public Nullable<double> Masa { get; set; }
+        public string Izmers { get; set; }
+        public string Masa { get; set; }
         public Nullable<double> Gravitacija { get; set; }
         public Nullable<double> MinT { get; set; }
         public Nullable<double> MaxT { get; set; }
