@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AstroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lidaparati">
+    <Key>
+      <PropertyRef Name="LidID" />
+    </Key>
+    <Property Name="LidID" Type="Int32" Nullable="false" />
+    <Property Name="Nosaukums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Misijas">
+    <Key>
+      <PropertyRef Name="MisijaID" />
+    </Key>
+    <Property Name="MisijaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nosaukums" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Datums" Type="DateTime" Precision="0" />
+    <Property Name="Organizacija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rezultats" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tips" Type="Int32" />
+    <NavigationProperty Name="RefTips" Relationship="Self.FK_Misijas_RefTips" FromRole="Misijas" ToRole="RefTips" />
+  </EntityType>
+  <EntityType Name="Pavadoni">
+    <Key>
+      <PropertyRef Name="PavadoniID" />
+    </Key>
+    <Property Name="PavadoniID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nosaukums" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Izmers" Type="Double" />
+    <Property Name="Masa" Type="Double" />
+    <Property Name="Gravitacija" Type="Double" />
+    <Property Name="MinT" Type="Double" />
+    <Property Name="MaxT" Type="Double" />
+    <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Planetas">
+    <Key>
+      <PropertyRef Name="PlanetaID" />
+    </Key>
+    <Property Name="PlanetaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nosaukums" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Izmers" Type="Double" />
+    <Property Name="Masa" Type="Double" />
+    <Property Name="Gravitacija" Type="Double" />
+    <Property Name="MinT" Type="Double" />
+    <Property Name="MaxT" Type="Double" />
+    <Property Name="Apraksts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RefTips">
+    <Key>
+      <PropertyRef Name="RefTipsID" />
+    </Key>
+    <Property Name="RefTipsID" Type="Int32" Nullable="false" />
+    <Property Name="Veids" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Misijas" Relationship="Self.FK_Misijas_RefTips" FromRole="RefTips" ToRole="Misijas" />
+  </EntityType>
+  <Association Name="FK_Misijas_RefTips">
+    <End Role="RefTips" Type="Self.RefTips" Multiplicity="0..1" />
+    <End Role="Misijas" Type="Self.Misijas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RefTips">
+        <PropertyRef Name="RefTipsID" />
+      </Principal>
+      <Dependent Role="Misijas">
+        <PropertyRef Name="Tips" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AstroEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lidaparati" EntityType="Self.Lidaparati" />
+    <EntitySet Name="Misijas" EntityType="Self.Misijas" />
+    <EntitySet Name="Pavadoni" EntityType="Self.Pavadoni" />
+    <EntitySet Name="Planetas" EntityType="Self.Planetas" />
+    <EntitySet Name="RefTips" EntityType="Self.RefTips" />
+    <AssociationSet Name="FK_Misijas_RefTips" Association="Self.FK_Misijas_RefTips">
+      <End Role="RefTips" EntitySet="RefTips" />
+      <End Role="Misijas" EntitySet="Misijas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
