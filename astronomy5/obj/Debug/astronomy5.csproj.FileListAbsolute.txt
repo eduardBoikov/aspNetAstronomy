@@ -69,6 +69,6 @@ C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\bin\ru\Microsoft.Owin.Sec
 C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.csprojResolveAssemblyReference.cache
 C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.dll
 C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.pdb
+C:\Users\Vladislavs\Desktop\aspNetAstronomy\astronomy5\obj\Debug\astronomy5.csprojResolveAssemblyReference.cache

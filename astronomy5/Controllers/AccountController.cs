@@ -86,7 +86,7 @@ namespace astronomy5.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Неудачная попытка входа.");
+                    ModelState.AddModelError("", "Neizdevās autarizēties.");
                     return View(model);
             }
         }
